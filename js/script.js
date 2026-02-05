@@ -1,8 +1,10 @@
-document.querySelectorAll(".card").forEach(card=>{
-  card.addEventListener("mouseenter",()=>{
-    card.style.transform="translateY(-8px)";
+let isUrdu=false;
+
+document.getElementById("langToggle").onclick=()=>{
+  isUrdu=!isUrdu;
+  document.getElementById("langToggle").innerText=isUrdu?"English":"اردو";
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.innerText=isUrdu?el.dataset.ur:el.dataset.en;
   });
-  card.addEventListener("mouseleave",()=>{
-    card.style.transform="translateY(0)";
-  });
-});
+  document.body.style.direction=isUrdu?"rtl":"ltr";
+};
