@@ -1,121 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Donate | Data Waly Foundation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <style>
-    /* ===== Donate Page Only Styles ===== */
-
-    body{
-      background:#f5f7fb;
-    }
-
-    .donate-page{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:40px 15px;
-    }
-
-    .donate-box{
-      background:#ffffff;
-      width:100%;
-      max-width:420px;
-      border-radius:20px;
-      box-shadow:0 20px 40px rgba(0,0,0,.15);
-      padding:30px 20px;
-      text-align:center;
-      animation:fadeUp .8s ease;
-    }
-
-    .donate-box h1{
-      margin-bottom:10px;
-      color:#0a2a43;
-    }
-
-    .donate-box p{
-      font-size:15px;
-      color:#555;
-      margin-bottom:15px;
-    }
-
-    .donate-qr{
-      width:100%;
-      max-width:260px;
-      height:auto;
-      margin:20px auto;
-      display:block;
-    }
-
-    .donate-info{
-      background:#f0f4f8;
-      border-radius:12px;
-      padding:12px;
-      margin-bottom:20px;
-      font-size:14px;
-      line-height:1.6;
-    }
-
-    .donate-btn{
-      display:inline-block;
-      width:100%;
-      padding:14px;
-      background:#2ecc71;
-      color:#fff;
-      font-weight:600;
-      border-radius:30px;
-      transition:.3s;
-    }
-
-    .donate-btn:hover{
-      transform:translateY(-2px);
-      box-shadow:0 10px 25px rgba(0,0,0,.25);
-    }
-
-    @keyframes fadeUp{
-      from{
-        opacity:0;
-        transform:translateY(30px);
-      }
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Donate</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <section class="donate-page">
-    <div class="donate-box">
+<section style="
+min-height:100vh;display:flex;align-items:center;justify-content:center;
+padding:40px 15px;
+">
 
-      <h1>Donate via JazzCash</h1>
-      <p>Your donation helps us serve humanity with dignity.</p>
+<div style="
+background:#fff;max-width:420px;width:100%;
+padding:30px 20px;border-radius:20px;
+text-align:center;box-shadow:0 20px 40px rgba(0,0,0,.15);
+">
 
-      <!-- QR Image -->
-      <img src="images/jazzcash-qr.jpg" alt="JazzCash QR Code" class="donate-qr">
+<h2>Donate via JazzCash</h2>
 
-      <!-- Donation Info -->
-      <div class="donate-info">
-        <strong>TILL ID:</strong> 982351540<br>
-        <strong>Account Title:</strong> Data Waly Foundation<br>
-        <strong>Bank:</strong> Mobilink Microfinance Bank
-      </div>
+<img src="images/jazzcash-qr.jpg" style="max-width:260px;margin:20px auto">
 
-      <!-- WhatsApp Button -->
-      <a href="https://wa.me/923017211194" class="donate-btn">
-        Send Payment Proof on WhatsApp
-      </a>
+<p><b>TILL ID:</b> 982351540</p>
+<p><b>Account:</b> Data Waly Foundation</p>
 
-    </div>
-  </section>
+<a href="https://wa.me/923017211194"
+class="btn whatsapp" style="display:block;margin-top:20px">
+Send Payment Proof on WhatsApp
+</a>
+
+</div>
+</section>
 
 </body>
 </html>
