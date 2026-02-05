@@ -9,7 +9,17 @@ body{font-family:Arial, sans-serif;background:#f7f9fb;color:#222}
 .logo-area span{font-size:14px;color:#9fd3ff}
 
 nav a{color:white;margin-left:15px;text-decoration:none}
-.btn{padding:10px 18px;border-radius:5px;color:white}
+.btn{
+  padding:12px 22px;
+  border-radius:30px;
+  font-weight:bold;
+  transition:all .3s ease;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
 .green{background:#2ECC71}
 .blue{background:#2FA4FF}
 
