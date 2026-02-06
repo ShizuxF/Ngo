@@ -6,3 +6,14 @@ document.querySelectorAll(".card").forEach(card=>{
     card.style.transform="translateY(0)";
   });
 });
+<script>
+function showJazz() {
+  document.getElementById("jazz").style.display = "block";
+  document.getElementById("bank").style.display = "none";
+}
+
+function showBank() {
+  document.getElementById("bank").style.display = "block";
+  document.getElementById("jazz").style.display = "none";
+}
+</script>
