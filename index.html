@@ -3,86 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <title>Data Waly Foundation</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="donate.css">
 </head>
 
 <body>
 
-<header class="navbar">
-  <div class="nav-inner">
-    <div class="brand">
-      <img src="images/logo.png">
-      <div>
-        <h1>Data Waly Foundation</h1>
-        <span>داتا والے فاؤنڈیشن</span>
-      </div>
-    </div>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="donate.html">Donate</a>
-    </nav>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="hero-box">
-    <h2>Serving Humanity with Dignity & Care</h2>
-    <p>We support poor families through free marriages, medical care & education.</p>
-
-    <div class="hero-actions">
-      <a href="donate.html" class="btn primary">Donate Now</a>
-      <a href="https://wa.me/923017211194" class="btn whatsapp">WhatsApp Help</a>
-    </div>
-  </div>
-</section>
-
-<section class="stats">
-  <div>👰 <b>5</b><span> Happy Marriages</span></div>
-  <div>🏥 <b>18</b><span> Successfull Treatments</span></div>
-  <div>📚 <b>50</b><span> Students</span></div>
-  <div>🧪 <b>100+</b><span> Lab Tests Monthly</span></div>
-</section>
-
-<section id="services" class="services">
-  <h2>Our Services</h2>
-
-  <div class="card-grid">
-    <div class="card">
-      <img src="images/marriage.jpg">
-      <h3>Poor Girls Marriage</h3>
-      <p>Dowry & ration support</p>
-    </div>
-
-    <div class="card">
-      <img src="images/medical.jpg">
-      <h3>Free Medical Care</h3>
-      <p>Doctors & medicines</p>
-    </div>
-
-    <div class="card">
-      <img src="images/lab.jpg">
-      <h3>Laboratory Services</h3>
-      <p>Blood, ECG & X-Ray</p>
-    </div>
-
-    <div class="card">
-      <img src="images/education.jpg">
-      <h3>Education Support</h3>
-      <p>Fees, books & uniforms</p>
-    </div>
-  </div>
-</section>
-
+<!-- HERO CTA -->
 <section class="cta">
   <h2>Your donation can change someone’s life</h2>
-  <a href="donate.html" class="btn primary">Donate Now</a>
+  <button class="donate-cta" onclick="openDonate()">Donate Now</button>
 </section>
 
-<footer>
-  © 2026 Data Waly Foundation — Non-Profit Organization
-</footer>
+<!-- DONATION MODAL -->
+<div id="donateModal" class="modal">
+  <div class="modal-box">
 
-<script src="js/script.js"></script>
+    <span class="close" onclick="closeDonate()">×</span>
+    <h3>Support Our Cause ❤️</h3>
+
+    <div class="donation-cards">
+      <div class="donation-card glow-green" onclick="showJazz()">
+        <img src="/images/jazzcash.png">
+        <p>JazzCash</p>
+      </div>
+
+      <div class="donation-card glow-blue" onclick="showBank()">
+        <img src="/images/bank.png">
+        <p>Bank / IBAN</p>
+      </div>
+    </div>
+
+    <!-- JazzCash -->
+    <div id="jazzBox" class="details">
+      <img src="/images/jazzcash.png">
+      <p><b>Account:</b> Data Waly Foundation</p>
+      <p><b>Till ID :</b> 982 351 540</p>
+      <button onclick="openQR()">Show QR</button>
+      <button onclick="sendWhatsApp('JazzCash')">Send Receipt</button>
+    </div>
+
+    <!-- Bank -->
+    <div id="bankBox" class="details">
+      <img src="/images/bank.png">
+      <p><b>Account:</b> Data Waly Foundation</p>
+      <p><b>IBAN:</b> PK22JCMA190192101721194</p>
+      <p><b>Bank:</b> Mobilink (JazzCash Bank)</p>
+      <button onclick="copyIBAN()">Copy IBAN</button>
+      <button onclick="sendWhatsApp('Bank Transfer')">Send Receipt</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- QR MODAL -->
+<div id="qrModal" class="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeQR()">×</span>
+    <h3>Scan to Donate</h3>
+    <img src="/images/jazz-qr.png" class="qr">
+  </div>
+</div>
+
+<!-- COUNTERS -->
+<section class="stats">
+  <div><span class="counter" data-target="9">0</span>+ Marriages</div>
+  <div><span class="counter" data-target="18">0</span>+ Treatments</div>
+  <div><span class="counter" data-target="50">0</span>+ Students</div>
+</section>
+
+<script>
+// MODALS
+function openDonate(){ donateModal.style.display="flex"; }
+function closeDonate(){ donateModal.style.display="none"; }
+
+function openQR(){ qrModal.style.display="flex"; }
+function closeQR(){ qrModal.style.display="none"; }
+
+// TOGGLES
+function showJazz(){
+  jazzBox.style.display="block";
+  bankBox.style.display="none";
+}
+function showBank(){
+  bankBox.style.display="block";
+  jazzBox.style.display="none";
+}
+
+// IBAN COPY
+function copyIBAN(){
+  navigator.clipboard.writeText("PK22JCMA190192101721194");
+  alert("IBAN Copied");
+}
+
+// WHATSAPP RECEIPT
+function sendWhatsApp(method){
+  let msg = `Assalamualaikum,%0A%0AI donated via ${method}.%0AAccount: Data Waly Foundation`;
+  window.open(`https://wa.me/923017211194?text=${msg}`);
+}
+
+// COUNTER ANIMATION
+const counters = document.querySelectorAll('.counter');
+counters.forEach(counter=>{
+  const update = ()=>{
+    const target = +counter.dataset.target;
+    const c = +counter.innerText;
+    const inc = target/100;
+    if(c < target){
+      counter.innerText = Math.ceil(c+inc);
+      setTimeout(update,30);
+    }else{
+      counter.innerText = target;
+    }
+  };
+  update();
+});
+</script>
+
 </body>
 </html>
