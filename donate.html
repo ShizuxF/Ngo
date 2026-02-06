@@ -2,38 +2,48 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Donate</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
+<title>Donate Now</title>
+<link rel="stylesheet" href="donate.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<section style="
-min-height:100vh;display:flex;align-items:center;justify-content:center;
-padding:40px 15px;
-">
+<section class="donate-box">
+  <h1>Support Our Cause ❤️</h1>
+  <p>Select a donation method</p>
 
-<div style="
-background:#fff;max-width:420px;width:100%;
-padding:30px 20px;border-radius:20px;
-text-align:center;box-shadow:0 20px 40px rgba(0,0,0,.15);
-">
+  <div class="donate-options">
+    <!-- JazzCash -->
+    <a href="jazzcash.html" class="donate-card jazz">
+      💳
+      <h3>Donate via JazzCash</h3>
+      <span>Instant Mobile Payment</span>
+    </a>
 
-<h2>Donate via JazzCash</h2>
+    <!-- IBAN -->
+    <div class="donate-card iban" onclick="showIBAN()">
+      🏦
+      <h3>Donate via IBAN</h3>
+      <span>Bank Transfer</span>
+    </div>
+  </div>
 
-<img src="images/jazzcash-qr.jpg" style="max-width:260px;margin:20px auto">
-
-<p><b>TILL ID:</b> 982351540</p>
-<p><b>Account:</b> Data Waly Foundation</p>
-
-<a href="https://wa.me/923017211194"
-class="btn whatsapp" style="display:block;margin-top:20px">
-Send Payment Proof on WhatsApp
-</a>
-
-</div>
+  <!-- IBAN DETAILS -->
+  <div id="ibanDetails" class="iban-details">
+    <img src="bank.png" alt="Bank Logo">
+    <p><strong>Account Title:</strong> Data Waly Foundation</p>
+    <p><strong>IBAN:</strong> PK22JCMA1901921017211194</p>
+    <p><strong>Bank:</strong> Mobilink (JazzCash Bank)</p>
+  </div>
 </section>
+
+<script>
+function showIBAN() {
+  document.getElementById("ibanDetails").style.display = "block";
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+</script>
 
 </body>
 </html>
