@@ -1,1 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
+body {
+  background: #0b1220;
+  color: #fff;
+}
+
+.donate-box {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.donate-box h1 {
+  font-size: 2.2rem;
+}
+
+.donate-box p {
+  margin: 10px 0 30px;
+  color: #cbd5e1;
+}
+
+.donate-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.donate-card {
+  background: #111827;
+  border-radius: 18px;
+  padding: 35px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.donate-card:hover {
+  transform: translateY(-6px);
+}
+
+.donate-card h3 {
+  margin-top: 10px;
+}
+
+.donate-card span {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.jazz {
+  border: 2px solid #00ffc6;
+}
+
+.iban {
+  border: 2px solid #38bdf8;
+}
+
+/* IBAN DETAILS */
+.iban-details {
+  display: none;
+  margin-top: 40px;
+  background: #020617;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.iban-details img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.iban-details p {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .donate-box h1 {
+    font-size: 1.7rem;
+  }
+}
