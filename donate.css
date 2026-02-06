@@ -1,91 +1,74 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
 body {
-  background: #0b1220;
+  background: radial-gradient(circle at top, #0f2027, #000);
+  font-family: 'Poppins', sans-serif;
   color: #fff;
 }
 
-.donate-box {
-  max-width: 900px;
+.donation-section {
+  max-width: 420px;
   margin: auto;
-  padding: 60px 20px;
+  padding: 40px 20px;
   text-align: center;
 }
 
-.donate-box h1 {
-  font-size: 2.2rem;
+.donation-section h2 {
+  font-size: 26px;
+  margin-bottom: 5px;
 }
 
-.donate-box p {
-  margin: 10px 0 30px;
-  color: #cbd5e1;
+.subtitle {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 30px;
 }
 
-.donate-options {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
+.donation-cards {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
 }
 
-.donate-card {
-  background: #111827;
-  border-radius: 18px;
-  padding: 35px 20px;
+.donation-card {
+  flex: 1;
+  background: linear-gradient(145deg, #0b1a2a, #050d16);
+  border-radius: 16px;
+  padding: 20px;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  text-decoration: none;
-  color: white;
+  transition: 0.4s;
+  box-shadow: 0 0 0 transparent;
 }
 
-.donate-card:hover {
-  transform: translateY(-6px);
+.donation-card:hover {
+  box-shadow: 0 0 18px rgba(0, 255, 200, 0.4);
+  transform: translateY(-5px);
 }
 
-.donate-card h3 {
-  margin-top: 10px;
+.donation-card img {
+  width: 48px;
+  margin-bottom: 10px;
 }
 
-.donate-card span {
-  font-size: 0.9rem;
-  color: #94a3b8;
+.donation-card span {
+  font-size: 14px;
+  display: block;
 }
 
-.jazz {
-  border: 2px solid #00ffc6;
-}
-
-.iban {
-  border: 2px solid #38bdf8;
-}
-
-/* IBAN DETAILS */
-.iban-details {
+.details-box {
   display: none;
-  margin-top: 40px;
-  background: #020617;
-  border-radius: 20px;
-  padding: 30px;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 18px;
+  background: linear-gradient(160deg, #071826, #020a12);
+  box-shadow: 0 0 25px rgba(0,255,200,0.15);
 }
 
-.iban-details img {
-  width: 120px;
-  margin-bottom: 20px;
+.details-box img {
+  width: 55px;
+  margin-bottom: 12px;
 }
 
-.iban-details p {
-  margin: 8px 0;
-  font-size: 1rem;
-}
-
-/* Mobile */
-@media(max-width:600px){
-  .donate-box h1 {
-    font-size: 1.7rem;
-  }
+.details-box p {
+  font-size: 14px;
+  margin: 6px 0;
+  color: #e0e0e0;
 }
