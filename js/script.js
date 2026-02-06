@@ -1,17 +1,10 @@
-// Scroll Reveal
-const reveals=document.querySelectorAll(".reveal");
-window.addEventListener("scroll",()=>{
-  reveals.forEach(el=>{
-    const top=el.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      el.classList.add("active");
-    }
-  });
-});
+let isUrdu=false;
 
-// Parallax
-window.addEventListener("scroll",()=>{
-  document.querySelectorAll(".parallax").forEach(sec=>{
-    sec.style.backgroundPositionY = window.scrollY * 0.3 + "px";
+document.getElementById("langToggle").onclick=()=>{
+  isUrdu=!isUrdu;
+  document.getElementById("langToggle").innerText=isUrdu?"English":"اردو";
+  document.querySelectorAll("[data-en]").forEach(el=>{
+    el.innerText=isUrdu?el.dataset.ur:el.dataset.en;
   });
-});
+  document.body.style.direction=isUrdu?"rtl":"ltr";
+};
